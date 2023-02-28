@@ -1,5 +1,12 @@
 <script>
   export default {
+    mounted() {
+      console.log('mounted')
+    },
+
+    created() {
+      console.log('created')
+    },
     data() {
       return {
         isValid: false,
