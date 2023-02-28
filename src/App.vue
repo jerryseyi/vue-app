@@ -3,7 +3,15 @@
 
     data() {
       return {
-        authenticated: false
+        authenticated: false,
+        admin: true,
+        products: [
+          {id: 1, name: 'phone', type: 'Iphone'},
+          {id: 2, name: 'phone', type: 'Samsung'},
+          {id: 3, name: 'laptop', type: 'hp'},
+          {id: 4, name: 'laptop', type: 'macbook'},
+          {id: 5, name: 'laptop', type: 'Dell'}
+        ]
       }
     }
 
@@ -25,6 +33,7 @@
       <h4>Reply to post</h4>
       <input type="text" placeholder="reply">
     </div>
+    <div v-else-if="admin">Super Admin in.</div>
     <div v-else>
       <p>login to participate</p>
     </div>
