@@ -11,7 +11,9 @@
       return {
         isValid: false,
         state: 'unverified',
-        counter: 0
+        counter: 0,
+        firstName: 'Negla',
+        lastName: 'Abubakar'
       }
     },
     methods: {
@@ -25,6 +27,12 @@
 
       incrementCounter() {
         this.counter++;
+      }
+    },
+
+    computed: {
+      fullname() {
+        return this.firstName + ' ' + this.lastName;
       }
     }
   }
@@ -40,6 +48,12 @@
     <p>The current state is {{state}}</p>
     <h3>Counter</h3>
     <p>counter is {{ counter }} <a @click.prevent="incrementCounter">increment counter</a></p>
+    <input type="text" v-model="state">
+    <br>
+    <br>
+    <br>
+
+    <h3>welcome {{ fullname }}</h3>
   </div>
 </template>
 
